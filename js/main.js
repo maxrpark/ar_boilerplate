@@ -2,11 +2,13 @@ import * as THREE from "three";
 import { MindARThree } from "mindar-image-three";
 import { resourcesLoader } from "./utils/resourcesLoader.js";
 import { sources } from "./resources.js";
+import { setARTestImage } from "./utils/helperFunctions.js";
+const USING_TEST_IMG = false;
 const listener = new THREE.AudioListener();
 const audio = new THREE.PositionalAudio(listener);
 let worldCup = null;
 let envMap = null;
-const resources = async () => {
+const setResources = async () => {
     try {
         const loadedResources = await resourcesLoader(sources);
         const { model, environmentMap } = loadedResources;
@@ -19,7 +21,12 @@ const resources = async () => {
         console.log(error);
     }
 };
-document.addEventListener("DOMContentLoaded", () => resources());
+if (USING_TEST_IMG) {
+    setARTestImage("../assets/muchachos.png", setResources);
+}
+else {
+    document.addEventListener("DOMContentLoaded", () => setResources());
+}
 const start = async () => {
     if (!worldCup)
         return;

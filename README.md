@@ -88,7 +88,7 @@ const assets = [
 
 ```ts
 let worldCup: THREE.Mesh | null = null;
-let envMap: THREE.Texture | null = null;
+let envMap: THREE.Texture | null = null; // options if want to use THREE light classes
 ```
 
 4- Create an async function, let's call it resources, to handle the loading of assets:
@@ -107,10 +107,10 @@ const resources = async () => {
 
     // Assign the loaded assets to your variables
     worldCup = model.scene;
-    envMap = environmentMap;
+    envMap = environmentMap; // options if want to use THREE light classes
 
     // Set the mapping for the environment map
-    envMap.mapping = THREE.EquirectangularReflectionMapping;
+    envMap.mapping = THREE.EquirectangularReflectionMapping; // options if want to use THREE light classes
 
     // Call the start function or any other logic to begin your AR experience
     start();
@@ -120,54 +120,49 @@ const resources = async () => {
 };
 ```
 
-5- Finally, call the resources function when the DOM content is loaded:
-
-```ts
-document.addEventListener("DOMContentLoaded", () => resources());
-```
-
-This will trigger the loading of assets, and once they are loaded, you can access them through the model and envMap variables.
+This will trigger the loading of assets, and once they are loaded, you can access them through by the name you define in the assets array.
 
 Make sure to replace the start() function call with the appropriate logic to start your AR experience.
+
+### Optional Features: Setting a Test Image for AR
+
+The setResources function can be trigger in two again. Using the device camera or using a mock image.
+At the top of the main.ts there is a variable called `USING_TEST_IMG` which is set to `false` by default.
+
+```ts
+if (USING_TEST_IMG) {
+  setARTestImage("../assets/muchachos.png", setResources);
+} else {
+  document.addEventListener("DOMContentLoaded", () => setResources());
+}
+```
+
+If you want to test your AR experience using a test image instead of a live camera feed, you can change `USING_TEST_IMG` to true
+
+```ts
+const USING_TEST_IMG = true;
+```
+
+#### How does setARTestImage work?
+
+```ts
+setARTestImage(testImagePath, setResources);
+```
+
+The setARTestImage function takes two parameters: the testImagePath (the path to your test image) and a setResources callback function that will be called when the test button is clicked.
+
+The setARTestImage function creates a button element with the label "Start" and attaches an event listener to it. When the button is clicked, the mockWithImage function is called with the testImagePath to mock the getUserMedia function and create a test stream using a canvas and the test image.
+
+After mocking the image stream, the setResources callback function is invoked, and the test button is hidden (style.display = "none").
+
+By using the setARTestImage function during development or testing, you can simulate an AR experience using a test image instead of accessing the user's camera.
+
+Remember to replace testImagePath with the path to your desired test image.
 
 ### Assets Loader spinner
 
 Since loading some assets like models or textures can take some time, there is an extra loader spinner at the beginning of the experience.
 A CSS loader example has been used for this purpose, which can be found [here](https://cssloaders.github.io/)
-
-## Setting a Test Image for AR
-
-If you want to test your AR experience using a test image instead of a live camera feed, you can use the provided utility functions. Here's how you can do it:
-
-1- Import the necessary functions in your code:
-
-```ts
-import { setARTestImage } from "./arTestUtils.js";
-```
-
-2- Comment out the document.addEventListener("DOMContentLoaded", () => resources()); line.
-
-```ts
-// document.addEventListener("DOMContentLoaded", () => resources());
-```
-
-3- Define a test image path that points to the image you want to use for testing your AR experience.
-
-4- Call the setARTestImage function to set up a test button and handle the logic for using the test image:
-
-```ts
-setARTestImage(testImagePath, start);
-```
-
-he setARTestImage function takes two parameters: the testImagePath (the path to your test image) and a resources callback function that will be called when the test button is clicked.
-
-The setARTestImage function creates a button element with the label "Start" and attaches an event listener to it. When the button is clicked, the mockWithImage function is called with the testImagePath to mock the getUserMedia function and create a test stream using a canvas and the test image.
-
-After mocking the image stream, the resources callback function is invoked, and the test button is hidden (style.display = "none").
-
-By using the setARTestImage function during development or testing, you can simulate an AR experience using a test image instead of accessing the user's camera.
-
-Remember to replace testImagePath with the path to your desired test image.
 
 ## Project Structure
 

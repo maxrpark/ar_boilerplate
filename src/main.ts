@@ -2,18 +2,22 @@ import * as THREE from "three";
 import { MindARThree } from "mindar-image-three";
 import { resourcesLoader } from "./utils/resourcesLoader.js";
 import { sources } from "./resources.js";
-// import { setARTestImage } from "./utils/helperFunctions.js";
-
+import { setARTestImage } from "./utils/helperFunctions.js";
 // import guiDebugger from "./utils/GUIDebugger.js";
 // const debugActive = window.location.hash === "#debug";
+
+const USING_TEST_IMG = false;
 
 const listener = new THREE.AudioListener();
 const audio = new THREE.PositionalAudio(listener);
 
+// The boiler plate uses environmentMap for lighting.
+// If you prefer you can use THREE light classes instead
+// See line 73
 let worldCup: THREE.Mesh | null = null;
 let envMap: THREE.Texture | null = null;
 
-const resources = async () => {
+const setResources = async () => {
   try {
     const loadedResources = await resourcesLoader(sources);
 
@@ -32,11 +36,13 @@ const resources = async () => {
     console.log(error);
   }
 };
-// TEST AR
-// setARTestImage("../assets/muchachos.png", resources);
 
-// AR LIVE
-document.addEventListener("DOMContentLoaded", () => resources());
+if (USING_TEST_IMG) {
+  setARTestImage("../assets/muchachos.png", setResources);
+} else {
+  document.addEventListener("DOMContentLoaded", () => setResources());
+}
+
 const start = async () => {
   if (!worldCup) return;
 
@@ -66,7 +72,7 @@ const start = async () => {
   // SCENE
   scene.environment = envMap;
 
-  // THE BOILERPLATE USES environment for lighting.
+  // THE BOILERPLATE USES environment for lighting.n
   // The following commented code is for adding light to the experience
 
   // /// LIGHTS
