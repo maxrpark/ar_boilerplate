@@ -48,5 +48,11 @@ export const resourcesLoader = (
     loadPromises.push(loadPromise);
   }
 
-  return Promise.all(loadPromises).then(() => items);
+  return Promise.all(loadPromises).then(() => {
+    const loaderWrapper: HTMLDivElement = document.querySelector(
+      ".assets-loader-wrapper"
+    )!;
+    loaderWrapper.style.display = "none";
+    return items;
+  });
 };
