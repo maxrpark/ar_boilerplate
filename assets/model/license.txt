@@ -1,0 +1,11 @@
+Model Information:
+* title:	World Cup Trophy
+* source:	https://sketchfab.com/3d-models/world-cup-trophy-c4ae2dd470194a81b856ad84620d8beb
+* author:	waimus (https://sketchfab.com/waimus)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "World Cup Trophy" (https://sketchfab.com/3d-models/world-cup-trophy-c4ae2dd470194a81b856ad84620d8beb) by waimus (https://sketchfab.com/waimus) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

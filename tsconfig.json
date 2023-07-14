@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    // project options
+    "lib": ["ESNext", "dom"],
+    "removeComments": true,
+    "rootDir": "./src",
+    "outDir": "js",
+    "target": "es2017",
+
+    // Module resolution
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "paths": {},
+
+    // Source Map
+    "sourceMap": true,
+    "sourceRoot": "/",
+
+    // Strict Checks
+    "alwaysStrict": true,
+    "allowUnreachableCode": false,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+
+    // Linter Checks
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": ["./**/*.ts", "types"],
+  "exclude": ["node_modules/**/*"]
+}

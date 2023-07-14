@@ -1,0 +1,309 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1573,
+      "max": [1.0506176948547363, 1.03512442111969, 5.047415256500244],
+      "min": [-1.0323500633239746, -1.0478438138961792, 0.24206647276878357],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 18876,
+      "componentType": 5126,
+      "count": 1573,
+      "max": [1.0, 1.0, 1.0],
+      "min": [-1.0, -1.0, -1.0],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1573,
+      "max": [1.0, 1.0, 0.9999022483825684, 1.0],
+      "min": [-1.0, -1.0, -0.9975496530532837, -1.0],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1573,
+      "max": [0.9991649389266968, 0.981632649898529],
+      "min": [0.0062120649963617325, 0.007006509229540825],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 5817,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 37752,
+      "componentType": 5126,
+      "count": 911,
+      "max": [0.8704361915588379, 0.9292479753494263, 3.734623670578003],
+      "min": [-0.8704361915588379, -1.0075287818908691, -0.02787691354751587],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 48684,
+      "componentType": 5126,
+      "count": 911,
+      "max": [0.9976229071617126, 0.9992855787277222, 0.7920973300933838],
+      "min": [-0.9993500709533691, -0.9976229071617126, -0.5929321646690369],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 25168,
+      "componentType": 5126,
+      "count": 911,
+      "max": [1.0, 0.9999770522117615, 0.7943745851516724, 1.0],
+      "min": [-0.9999998211860657, -1.0, -0.9736451506614685, -1.0],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 12584,
+      "componentType": 5126,
+      "count": 911,
+      "max": [0.9934824109077454, 0.9898615479469299],
+      "min": [0.0029024165123701096, 0.032268375158309937],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 23268,
+      "componentType": 5125,
+      "count": 4806,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "waimus (https://sketchfab.com/waimus)",
+      "license": "CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)",
+      "source": "https://sketchfab.com/3d-models/world-cup-trophy-c4ae2dd470194a81b856ad84620d8beb",
+      "title": "World Cup Trophy"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 42492,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 19872,
+      "byteOffset": 42492,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 59616,
+      "byteOffset": 62364,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 39744,
+      "byteOffset": 121980,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 161724,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/globe_baseColor.jpg"
+    },
+    {
+      "uri": "textures/globe_metallicRoughness.jpg"
+    },
+    {
+      "uri": "textures/globe_normal.png"
+    },
+    {
+      "uri": "textures/body_baseColor.jpg"
+    },
+    {
+      "uri": "textures/body_metallicRoughness.jpg"
+    },
+    {
+      "uri": "textures/body_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "globe",
+      "normalTexture": {
+        "index": 2
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "body",
+      "normalTexture": {
+        "index": 5
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicRoughnessTexture": {
+          "index": 4
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "wctrophy_globe_low_globe_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "wctrophy_body_low_body_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [1],
+      "matrix": [
+        1.0, 0.0, 0.0, 0.0, 0.0, 2.220446049250313e-16, -1.0, 0.0, 0.0, 1.0,
+        2.220446049250313e-16, 0.0, 0.0, 0.0, 0.0, 1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [2],
+      "matrix": [
+        1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0,
+        0.0, 1.0
+      ],
+      "name": "a19dbd42aa97483385fda3d99bc39821.fbx"
+    },
+    {
+      "children": [3, 5],
+      "name": "RootNode"
+    },
+    {
+      "children": [4],
+      "matrix": [
+        100.0, 0.0, 0.0, 0.0, 0.0, -1.629206793918314e-5, -99.99999999999868,
+        0.0, 0.0, 99.99999999999868, -1.629206793918314e-5, 0.0, 0.0, 0.0, 0.0,
+        1.0
+      ],
+      "name": "wctrophy_globe_low"
+    },
+    {
+      "mesh": 0,
+      "name": "wctrophy_globe_low_globe_0"
+    },
+    {
+      "children": [6],
+      "matrix": [
+        100.0, 0.0, 0.0, 0.0, 0.0, -1.629206793918314e-5, -99.99999999999868,
+        0.0, 0.0, 99.99999999999868, -1.629206793918314e-5, 0.0, 0.0, 0.0, 0.0,
+        1.0
+      ],
+      "name": "wctrophy_body_low"
+    },
+    {
+      "mesh": 1,
+      "name": "wctrophy_body_low_body_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [0]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    }
+  ]
+}
