@@ -2,7 +2,7 @@ import { Loader } from "./utils/resourcesLoader.js";
 export const sources = [
     {
         type: Loader.GLTF_LOADER,
-        path: "../assets/models/worldcup/scene.gltf",
+        path: "../assets/models/wordCupModel/scene.gltf",
         name: "model",
     },
     {
