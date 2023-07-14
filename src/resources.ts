@@ -3,7 +3,7 @@ import { Loader } from "./utils/resourcesLoader.js";
 export const sources = [
   {
     type: Loader.GLTF_LOADER,
-    path: "../assets/model/scene.gltf",
+    path: "../assets/models/worldcup/scene.gltf",
     name: "model",
   },
   {

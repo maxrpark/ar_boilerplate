@@ -66,6 +66,9 @@ const start = async () => {
   // SCENE
   scene.environment = envMap;
 
+  // THE BOILERPLATE USES environment for lighting.
+  // The following commented code is for adding light to the experience
+
   // /// LIGHTS
   // // AMBIENT_LIGHT
   // const ambientLight = new THREE.AmbientLight("#2630ba", 1.02);
@@ -89,11 +92,12 @@ const start = async () => {
   const anchor = mindarThree.addAnchor(0);
   anchor.group.add(worldCup);
 
-  // AUDIO
+  // AUDIO OPTIONAL
   camera.add(listener);
   anchor.group.add(audio);
-
   audio.setRefDistance(100);
+
+  // OPTIONAL ANIMATION USING GSAP
   //@ts-ignore
   let tl = gsap.timeline({ ease: "none", paused: true });
 
@@ -112,6 +116,7 @@ const start = async () => {
       0
     );
 
+  // MindAr events
   anchor.onTargetFound = () => {
     sound.offset = 18;
     sound.play();
