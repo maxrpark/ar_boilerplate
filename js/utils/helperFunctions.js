@@ -19,6 +19,16 @@ export const mockWithImage = (path) => {
 export const setARTestImage = (path, callback) => {
     const testButton = document.createElement("button");
     testButton.textContent = "Start";
+    testButton.style.zIndex = "10";
+    testButton.style.position = "absolute";
+    testButton.style.top = "50%";
+    testButton.style.left = "50%";
+    testButton.style.transform = "translate(-50%,-50%)";
+    testButton.style.padding = "1rem 2rem";
+    testButton.style.fontSize = "1.25rem";
+    testButton.style.color = "white";
+    testButton.style.background = "black";
+    testButton.style.border = "none";
     testButton.addEventListener("click", () => {
         mockWithImage(path);
         callback();
