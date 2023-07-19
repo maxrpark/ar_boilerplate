@@ -10,13 +10,17 @@ To install the dependencies, run the following command:
 npm install
 ```
 
-## Development
+## Typescript
 
-To compile TypeScript files and start the development server, run the following command:
+Compile TypeScript files run the following command:
 
 ```bash
 npm run build
 ```
+
+## Development server
+
+Run the application using your favorite local server extension.
 
 ## When the app is ready Scan the image
 
