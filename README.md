@@ -1,4 +1,30 @@
-# THREE.js & MINDAR Boilerplate
+# THREE.js & MINDAR Boilerplate - Typescript
+
+## Instructions
+
+### Installation
+
+To install the dependencies, run the following command:
+
+```bash
+npm install
+```
+
+## Development
+
+To compile TypeScript files and start the development server, run the following command:
+
+```bash
+npm run build
+```
+
+## When the app is ready Scan the image
+
+![Image Description](./assets/image_to_scan_with_qr.png)
+
+## Live version
+
+[https://muchachos.netlify.app/](https://muchachos.netlify.app/)
 
 ## About
 
@@ -22,7 +48,7 @@ This boilerplate includes the CDN for GreenSock and lil-gui. These libraries are
 
 ## Model
 
-The model used in this boilerplate has been downloaded from Sketchfab. The model's Sketchfab page can be found [here](https://sketchfab.com/3d-models/world-cup-trophy-c4ae2dd470194a81b856ad84620d8beb). The model is attributed to Waimus.
+The model used in this boilerplate has been downloaded from Sketchfab. The model's Sketchfab page can be found [here](https://sketchfab.com/3d-models/world-cup-trophy-c4ae2dd470194a81b856ad84620d8beb). The model is attributed to Waimus and it is licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Resources Loader
 

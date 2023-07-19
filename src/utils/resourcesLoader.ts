@@ -7,6 +7,7 @@ import { RGBELoader } from "three/addons/loaders/RGBELoader.js";
 export enum Loader {
   RGBE_LOADER = "rgbeLoader",
   GLTF_LOADER = "gltfLoader",
+  TEXTURE_LOADER = "textureLoader",
 }
 
 export interface SourceInt {
@@ -20,15 +21,20 @@ type FileType = GLTF | THREE.Texture;
 interface ResourceItemsInt {
   [key: string]: FileType | undefined;
 }
-type LoaderType = Loader.GLTF_LOADER | Loader.RGBE_LOADER;
+type LoaderType =
+  | Loader.GLTF_LOADER
+  | Loader.RGBE_LOADER
+  | Loader.TEXTURE_LOADER;
 interface LoadersInt {
   [Loader.GLTF_LOADER]: GLTFLoader;
   [Loader.RGBE_LOADER]: RGBELoader;
+  [Loader.TEXTURE_LOADER]: THREE.TextureLoader;
 }
 
 const loaders: LoadersInt = {
   [Loader.GLTF_LOADER]: new GLTFLoader(),
   [Loader.RGBE_LOADER]: new RGBELoader(),
+  [Loader.TEXTURE_LOADER]: new THREE.TextureLoader(),
 };
 
 export const resourcesLoader = (

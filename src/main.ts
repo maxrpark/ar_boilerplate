@@ -6,7 +6,7 @@ import { setARTestImage } from "./utils/helperFunctions.js";
 // import guiDebugger from "./utils/GUIDebugger.js";
 // const debugActive = window.location.hash === "#debug";
 
-const USING_TEST_IMG = false;
+const USING_TEST_IMG = true;
 
 const listener = new THREE.AudioListener();
 const audio = new THREE.PositionalAudio(listener);
@@ -53,15 +53,6 @@ const start = async () => {
 
   const { renderer, scene, camera } = mindarThree;
 
-  // AUDIO
-  const sound = new THREE.Audio(listener);
-  const audioLoader = new THREE.AudioLoader();
-  audioLoader.load("../assets/muchachos.mp3", function (buffer) {
-    sound.setBuffer(buffer);
-    sound.setLoop(true);
-    sound.setVolume(0.5);
-  });
-
   // RENDERER
   renderer.outputColorSpace;
   renderer.toneMapping = THREE.LinearToneMapping;
@@ -98,29 +89,32 @@ const start = async () => {
   const anchor = mindarThree.addAnchor(0);
   anchor.group.add(worldCup);
 
-  // AUDIO OPTIONAL
-  camera.add(listener);
-  anchor.group.add(audio);
-  audio.setRefDistance(100);
-
   // OPTIONAL ANIMATION USING GSAP
   //@ts-ignore
   let tl = gsap.timeline({ ease: "none", paused: true });
 
-  tl.to(worldCup!.scale, {
-    x: 0.002,
-    y: 0.002,
-    z: 0.002,
-    duration: 3,
+  tl.set(worldCup.rotation, {
+    y: -2.5,
   })
-    .to(worldCup!.position, { y: -0.4, duration: 2 }, 0)
-    .set(
-      worldCup.rotation,
-      {
-        y: -2.5,
-      },
-      0
-    );
+    .to(worldCup!.scale, {
+      x: 0.002,
+      y: 0.002,
+      z: 0.002,
+      duration: 3,
+    })
+    .to(worldCup!.position, { y: -0.4, duration: 2 }, 0);
+
+  // AUDIO OPTIONAL
+  const sound = new THREE.Audio(listener);
+  const audioLoader = new THREE.AudioLoader();
+  audioLoader.load("../assets/muchachos.mp3", function (buffer) {
+    sound.setBuffer(buffer);
+    sound.setLoop(true);
+    sound.setVolume(0.5);
+  });
+  camera.add(listener);
+  anchor.group.add(audio);
+  audio.setRefDistance(100);
 
   // MindAr events
   anchor.onTargetFound = () => {

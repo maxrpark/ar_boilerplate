@@ -3,7 +3,7 @@ import { MindARThree } from "mindar-image-three";
 import { resourcesLoader } from "./utils/resourcesLoader.js";
 import { sources } from "./resources.js";
 import { setARTestImage } from "./utils/helperFunctions.js";
-const USING_TEST_IMG = false;
+const USING_TEST_IMG = true;
 const listener = new THREE.AudioListener();
 const audio = new THREE.PositionalAudio(listener);
 let worldCup = null;
@@ -35,13 +35,6 @@ const start = async () => {
         imageTargetSrc: "../assets/targets/target.mind",
     });
     const { renderer, scene, camera } = mindarThree;
-    const sound = new THREE.Audio(listener);
-    const audioLoader = new THREE.AudioLoader();
-    audioLoader.load("../assets/muchachos.mp3", function (buffer) {
-        sound.setBuffer(buffer);
-        sound.setLoop(true);
-        sound.setVolume(0.5);
-    });
     renderer.outputColorSpace;
     renderer.toneMapping = THREE.LinearToneMapping;
     renderer.toneMappingExposure = 1;
@@ -52,20 +45,27 @@ const start = async () => {
     worldCup.position.y = 0.5;
     const anchor = mindarThree.addAnchor(0);
     anchor.group.add(worldCup);
-    camera.add(listener);
-    anchor.group.add(audio);
-    audio.setRefDistance(100);
     let tl = gsap.timeline({ ease: "none", paused: true });
-    tl.to(worldCup.scale, {
+    tl.set(worldCup.rotation, {
+        y: -2.5,
+    })
+        .to(worldCup.scale, {
         x: 0.002,
         y: 0.002,
         z: 0.002,
         duration: 3,
     })
-        .to(worldCup.position, { y: -0.4, duration: 2 }, 0)
-        .set(worldCup.rotation, {
-        y: -2.5,
-    }, 0);
+        .to(worldCup.position, { y: -0.4, duration: 2 }, 0);
+    const sound = new THREE.Audio(listener);
+    const audioLoader = new THREE.AudioLoader();
+    audioLoader.load("../assets/muchachos.mp3", function (buffer) {
+        sound.setBuffer(buffer);
+        sound.setLoop(true);
+        sound.setVolume(0.5);
+    });
+    camera.add(listener);
+    anchor.group.add(audio);
+    audio.setRefDistance(100);
     anchor.onTargetFound = () => {
         sound.offset = 18;
         sound.play();

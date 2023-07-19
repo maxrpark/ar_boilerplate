@@ -1,13 +1,16 @@
+import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { RGBELoader } from "three/addons/loaders/RGBELoader.js";
 export var Loader;
 (function (Loader) {
     Loader["RGBE_LOADER"] = "rgbeLoader";
     Loader["GLTF_LOADER"] = "gltfLoader";
+    Loader["TEXTURE_LOADER"] = "textureLoader";
 })(Loader || (Loader = {}));
 const loaders = {
     [Loader.GLTF_LOADER]: new GLTFLoader(),
     [Loader.RGBE_LOADER]: new RGBELoader(),
+    [Loader.TEXTURE_LOADER]: new THREE.TextureLoader(),
 };
 export const resourcesLoader = (assets) => {
     const items = {};
