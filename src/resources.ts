@@ -9,6 +9,6 @@ export const sources = [
   {
     type: Loader.RGBE_LOADER,
     name: "environmentMap",
-    path: "../assets/bg_map_2.hdr",
+    path: "../assets/environments/bg_map_2.hdr",
   },
 ];

@@ -58,7 +58,7 @@ export const resourcesLoader = (
     const loaderWrapper: HTMLDivElement = document.querySelector(
       ".assets-loader-wrapper"
     )!;
-    loaderWrapper.style.display = "none";
+    if (loaderWrapper) loaderWrapper.style.display = "none";
     return items;
   });
 };

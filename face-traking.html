@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link
+      rel="icon"
+      href="./assets/logo.svg"
+      type="image/svg+xml"
+      sizes="any"
+    />
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.7.3/dist/es-module-shims.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/lil-gui@0.18"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.154.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.154.0/examples/jsm/",
+          "mindar-face-three": "https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-face-three.prod.js"
+        }
+      }
+    </script>
+    <title>BOILERPLATE AR | Maxi Ruti</title>
+  </head>
+  <body>
+    <script type="module" src="./js/face-traking.js"></script>
+  </body>
+</html>

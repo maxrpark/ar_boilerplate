@@ -27,7 +27,8 @@ export const resourcesLoader = (assets) => {
     }
     return Promise.all(loadPromises).then(() => {
         const loaderWrapper = document.querySelector(".assets-loader-wrapper");
-        loaderWrapper.style.display = "none";
+        if (loaderWrapper)
+            loaderWrapper.style.display = "none";
         return items;
     });
 };
